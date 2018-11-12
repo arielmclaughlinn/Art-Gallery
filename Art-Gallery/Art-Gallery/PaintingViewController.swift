@@ -1,12 +1,15 @@
 import UIKit
 
 class PaintingViewController: UIViewController {
-
-
-
-}
-
-class PaintingTableViewCell: UITableViewCell {
     
-}
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+    }
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
 
+}
