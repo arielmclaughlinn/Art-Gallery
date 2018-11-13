@@ -62,7 +62,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="delegate" destination="xLi-fs-R15" id="Ct4-Ow-zAA"/>
+                                    <outlet property="dataSource" destination="xLi-fs-R15" id="jRm-MF-9pw"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -81,7 +81,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTc-KX-LjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="xLi-fs-R15" customClass="PaintingModel" customModule="Art_Gallery" customModuleProvider="target"/>
+                <customObject id="xLi-fs-R15" customClass="PaintingModel" customModule="Art_Gallery" customModuleProvider="target">
+                    <connections>
+                        <outlet property="tableView" destination="h7X-Yg-kh3" id="Wcc-fd-cxZ"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="2484" y="125.4872563718141"/>
         </scene>
