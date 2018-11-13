@@ -16,19 +16,34 @@ class PaintingModel: NSObject, UITableViewDataSource, PaintingTableViewCellDeleg
         }
     }
     
-    
-
     func tappedLikeButton(on cell: PaintingTableViewCell) {
-        <#code#>
+        guard let indexPath = tableView?.indexPath(for: cell)
+            else { fatalError("Cell does not exist.") }
+        
+        paintings[indexPath.row].isLiked.toggle()
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        self.tableView = tableView
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return paintings.count
+
     }
     
+    let reuseIdentifier = "cell"
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? PaintingTableViewCell else {
+            fatalError("Could not cast to cell")
+        }
+        
+        return cell
+
     }
+
     
     
 }
